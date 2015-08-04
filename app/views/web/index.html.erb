@@ -12,7 +12,10 @@ $(document).ready(function() {
       center = $('<span />').attr('id', 'pivot'),
       input  = $('<textarea />').attr('id', 'input'),
       ready  = $('<button />').attr('id', 'go').text('Read'),
-      speed  = $('<select />').attr('id', 'speed');
+      speed  = $('<select />').attr('id', 'speed'),
+      link   = $('<a />').attr('href', 'http://www.indentlabs.com').text('Indent Labs'),
+      attrib = $('<div />').attr('style', 'text-align: center')
+        .html('Powered by ').append(link);
 
   // Enable word speeds 200 WPM to 600 WPM
   for (i = 2; i < 7; i++) { // >
@@ -78,9 +81,10 @@ $(document).ready(function() {
            .append(center)
            .append(right)
            .append(input)
-           .append(speed).append($("<span />").text('WPM '))
+           .append(speed).append($("<span />").text(' WPM '))
            .append(ready)
-           .append($('<div />').text('The average person reads around 200 WPM normally.'));
+           .append($('<div />').addClass('footer').text('The average person reads around 200 WPM normally.'))
+           .append(attrib);
   
   // Aaaaand... lets sneak some literature in for the interested wanderers
   input.text('He is described as wearing a black suit strikingly similar to the visage of the notorious Men In Black, and as the name suggests, appears very thin and able to stretch his limbs and torso to inhuman lengths in order to induce fear and ensnare his prey. Once his arms are outstretched, his victims are put into something of a hypnotized state, where they are utterly helpless to stop themselves from walking into them.');
@@ -117,6 +121,9 @@ $(document).ready(function() {
     margin: 24px auto;
     width: 600px;
     height: 300px;
+  }
+  .footer {
+    margin-bottom: 20px;
   }
 </style>
 </head>
